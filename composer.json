@@ -7,12 +7,10 @@
     "admin-panel"
   ],
   "require-dev": {
-    "laravel/framework": "v11.21.0"
+    "laravel/framework": "*"
   },
-
   "require": {
-    "illuminate/support": "v11.21.0",
-    "ext-json": "*"
+    "illuminate/support": "*"
   },
   "extra": {
     "laravel": {
