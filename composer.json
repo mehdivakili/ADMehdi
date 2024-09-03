@@ -10,7 +10,8 @@
     "laravel/framework": "*"
   },
   "require": {
-    "illuminate/support": ">=10"
+    "illuminate/support": ">=10",
+    "doctrine/dbal": "^4.1"
   },
   "extra": {
     "laravel": {
