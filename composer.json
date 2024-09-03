@@ -1,0 +1,29 @@
+{
+  "name": "mehdivakili/admehdi",
+  "description": "A package that help you build an admin panel",
+  "version": "0.0.32",
+  "keywords": [
+    "laravel",
+    "admin-panel"
+  ],
+  "require-dev": {
+    "laravel/framework": "v11.21.0"
+  },
+
+  "require": {
+    "illuminate/support": "v11.21.0",
+    "ext-json": "*"
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "ADMehdi\\MainProvider"
+      ]
+    }
+  },
+  "autoload": {
+    "psr-4": {
+      "ADMehdi\\": "src/"
+    }
+  }
+}
