@@ -10,7 +10,7 @@
     "laravel/framework": "*"
   },
   "require": {
-    "illuminate/support": "*"
+    "illuminate/support": ">=10"
   },
   "extra": {
     "laravel": {
