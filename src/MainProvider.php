@@ -37,6 +37,7 @@ class MainProvider extends ServiceProvider
         $this->app->singleton('ADMehdiGuard', function () {
             return config('auth.defaults.guard', 'web');
         });
+        $this->publishes([__DIR__ . '/../migrations/' => database_path('migrations')], 'admehdi-migrations');
 
         $this->loadHelpers();
 
