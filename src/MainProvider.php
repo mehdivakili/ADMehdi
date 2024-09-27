@@ -3,8 +3,11 @@
 namespace ADMehdi;
 
 use ADMehdi\FormFields\After\DescriptionHandler;
+use ADMehdi\Http\Middleware\ADMehdiAdminMiddleware;
 use ADMehdi\Policies\SettingPolicy;
+use Illuminate\Contracts\Events\Dispatcher;
 use Illuminate\Foundation\AliasLoader;
+use Illuminate\Routing\Router;
 use Illuminate\Support\ServiceProvider;
 use ADMehdi\Models\Setting;
 use ADMehdi\Facades\ADMehdi as ADMehdiFacade;
@@ -18,9 +21,9 @@ class MainProvider extends ServiceProvider
         Setting::class => SettingPolicy::class,
     ];
 
-    public function boot()
+    public function boot(Router $router, Dispatcher $event)
     {
-
+        $router->aliasMiddleware('admin.user', ADMehdiAdminMiddleware::class);
     }
 
     public function register()
@@ -37,6 +40,7 @@ class MainProvider extends ServiceProvider
         $this->app->singleton('ADMehdiGuard', function () {
             return config('auth.defaults.guard', 'web');
         });
+
         $this->publishes([__DIR__ . '/../migrations/' => database_path('migrations')], 'admehdi-migrations');
 
         $this->loadHelpers();
