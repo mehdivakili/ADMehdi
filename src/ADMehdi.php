@@ -178,6 +178,13 @@ class ADMehdi
         }
     }
 
+    public function set_setting($key, $value)
+    {
+        $setting = $this->model('Setting')->where('key', $key)->first();
+        $setting->value = $value;
+        $setting->save();
+    }
+
     public function routes()
     {
         require __DIR__ . '/../routes/admehdi.php';
